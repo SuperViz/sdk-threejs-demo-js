@@ -14,7 +14,6 @@ export let camera;
 export let player
 
 export const startScene = () => {
-    console.log('start scene', THREE)
     let mixer;
 
     const clock = new THREE.Clock();
