@@ -4,6 +4,12 @@
    <a href="https://superviz.com/" target="blank"><img src="https://avatars.githubusercontent.com/u/56120553?s=200&v=4" width="120" alt="SuperViz Logo" /></a>
 </p>
 
+## Description
+
+This is a simple demo showing how to integrate Superviz SDK to a threeJS scene.
+The demo is using the scene: https://threejs.org/examples/#webgl_animation_keyframes
+
+
 ## Quick start
 
 Clone the project repository:
