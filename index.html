@@ -12,17 +12,35 @@
 			}
 		}
 		</script>
+		<link rel="stylesheet" href="./layout/assets/css/main.css">
+		<script type="module" src="./modules/demo/demo.js"></script>
+		<script type="module" src="./layout/components/index.js"></script>
 		<script type="module" src="https://unpkg.com/@superviz/sdk@latest"></script>
 		<script type="module" src="https://unpkg.com/@superviz/threejs-plugin@0.4.1"></script>
-		<script type="module" src="./index.js"></script>
-		<script type="module" src="./modules/threejs/scene.js"></script>
 	</head>
 	<body>
-		<div id="container"></div>
-		<div id="info">
-			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> webgl - animation - keyframes<br/>
-			Model: <a href="https://artstation.com/artwork/1AGwX" target="_blank" rel="noopener">Littlest Tokyo</a> by
-			<a href="https://artstation.com/glenatron" target="_blank" rel="noopener">Glen Fox</a>, CC Attribution.
+		<div class="wrapper">
+			<div class="logo">
+				<sv-demo-logo name="https://production.cdn.superviz.com/static/superviz-white-logo.svg"></sv-demo-logo>
+			</div>
+			<div class="content-wrapper">
+				<div class="text-side">
+					<sv-demo-title-left
+						name="Quick-start demo: use the Three.js plugin with default avatars"
+					></sv-demo-title-left>
+					<sv-demo-sub-title
+						name="This demo is a good starting point to learn the basics on how to use the three.js plugin."
+					></sv-demo-sub-title>
+				</div>
+				<div class="box-side">
+					<sv-demo-title-right name="Add your name to get started"></sv-demo-title-right>
+					<sv-demo-image
+						name="https://production.cdn.superviz.com/static/avatar-name.png"
+					></sv-demo-image>
+					<input type="text" class="sv-demo-input" id="username" />
+					<sv-demo-button name="NEXT" id="next"> </sv-demo-button>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
