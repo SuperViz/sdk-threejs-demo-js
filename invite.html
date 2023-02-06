@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Superviz ThreeJS Example DEMO</title>
+		<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+		<script type="importmap">
+		{
+			"imports": {
+				"three": "https://unpkg.com/three@0.149.0/build/three.module.js",
+				"three/addons/": "https://unpkg.com/three@0.149.0/examples/jsm/"
+			}
+		}
+		</script>
+        <link rel="stylesheet" href="https://production.storage.superviz.com/demos/assets/css/main.css">
+		<script type="module" src="./modules/demo/demo.js"></script>
+		<script type="module" src="https://production.storage.superviz.com/demos/components/index.js"></script>
+		<script type="module" src="https://unpkg.com/@superviz/sdk@latest"></script>
+		<script type="module" src="https://unpkg.com/@superviz/threejs-plugin@0.4.1"></script>
+	</head>
+	<body>
+    <div class="wrapper">
+      <div class="logo">
+          <sv-demo-logo id="sv-demo-logo" name="https://production.cdn.superviz.com/static/superviz-white-logo.svg">
+          </sv-demo-logo>
+      </div>
+      <div class="content-wrapper">
+          <div class="text-side">
+              <sv-demo-title-left id="sv-demo-title" name="Want to invite someone?">
+              </sv-demo-title-left>
+              <sv-demo-sub-title id="sv-demo-sub-title"
+                  name="We offer a full-function video conferencing layer for up to 16 participants, including chat, grid view and screen share.">
+              </sv-demo-sub-title>
+          </div>
+          <div class="box-side">
+              <sv-demo-title-right id="sv-demo-title-right" name="Invite someone to get the full experience">
+              </sv-demo-title-right>
+              <sv-demo-image id="sv-demo-image"
+                  name="https://production.cdn.superviz.com/static/want-invite-someone.png">
+              </sv-demo-image>
+              <div class="invite-input">
+                  <input type="text" class="sv-demo-invite-input" id="room-id">
+                <sv-demo-invite-button id="invite-url-button" name="&nbsp;&nbsp;&nbsp;" >
+                    <sv-demo-invite-image id="sv-demo-invite-image" name="https://production.cdn.superviz.com/static/copy-icon.png"></sv-demo-invite-image>
+                </sv-demo-invite-button>
+              </div>
+              <sv-demo-button id="join" name="JOIN"></sv-demo-button>
+          </div>
+      </div>
+  </div>
+	</body>
+</html>

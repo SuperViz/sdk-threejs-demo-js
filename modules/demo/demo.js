@@ -1,0 +1,67 @@
+const url = new URL(document.URL)
+let userType = url.searchParams.get('user-type');
+let userName = url.searchParams.get('user-name');
+let roomId = url.searchParams.get('roomId')
+
+
+document.addEventListener('DOMContentLoaded', () => { 
+  setMeetingUrl();
+})
+
+
+document.getElementById("next")?.addEventListener("click", (event) => { 
+    userName = document.getElementById('username').value ?? undefined;
+    location.href = `${location.protocol + '//' + location.host}/invite.html?roomId=${roomId}&user-type=${userType}&user-name=${userName}`
+});
+
+document.getElementById("join")?.addEventListener('click', event => { 
+  if(userName){
+    location.href = `${location.protocol + '//' + location.host}/ready.html?roomId=${roomId}&user-type=${userType}&user-name=${userName}`
+  } else {
+    location.href = `${location.protocol + '//' + location.host}/ready.html?roomId=${roomId}&user-type=${userType}`
+  }
+})
+
+document.getElementById("invite-url-button")?.addEventListener("click", (event) => { 
+    const roomIdInput = document.getElementById('room-id')
+
+    if(!roomIdInput) return
+
+    
+    navigator.clipboard.writeText(roomIdInput.value); 
+});
+
+function setMeetingUrl() { 
+  const roomIdInput = document.getElementById('room-id')
+  const url = new URL(document.URL)
+
+  if(url.searchParams.get('user-type') === 'guest' && location.href.includes('ready.html')) return;
+
+  if(url.searchParams.get('user-type') === 'guest' && !location.href.includes('guest.html')) {
+    location.href = `${location.protocol + '//' + location.host}/guest.html?roomId=${roomId}&user-type=${userType}`
+  }
+
+  userType = url.searchParams.get('user-type') ? url.searchParams.get('user-type') : 'host';
+  roomId = url.searchParams.get('roomId') ? url.searchParams.get('roomId') : generateUniqueId()
+  
+  if(roomIdInput) { 
+    roomIdInput.value = `${location.protocol + '//' + location.host}?roomId=${roomId}&user-type=guest`
+  }
+
+  if(url.searchParams.get('roomId') && url.searchParams.get('user-type')) return;
+
+  
+
+  url.searchParams.set('roomId', roomId)
+  url.searchParams.set('user-type', userType)
+}
+
+function generateUniqueId() {
+  let text = ''
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+
+  for (let i = 0; i < 6; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length))
+  }
+  return text
+}
