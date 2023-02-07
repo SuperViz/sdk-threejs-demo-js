@@ -6,7 +6,7 @@ let threejsPluginInstance = null;
 const addPlugin = () => {
     const player = camera;
     const plugin = new window.ThreeJsPlugin(scene, camera, player);
-    threejsPluginInstance = supervizSdk.connectAdapter(plugin, {
+    threejsPluginInstance = supervizSdk.loadPlugin(plugin, {
         avatarConfig: {
             height: 0,
             scale: 1
@@ -19,7 +19,7 @@ const addPlugin = () => {
 }
 
 // joined meeting
-supervizSdk.subscribe(SuperVizSdk.MeetingEvent.MY_USER_JOINED, () => {
+supervizSdk.subscribe(SuperVizSdk.MeetingEvent.MY_PARTICIPANT_JOINED, () => {
     startScene();
     addPlugin();
 })
