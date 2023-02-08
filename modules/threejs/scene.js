@@ -29,7 +29,7 @@ export const startScene = () => {
     scene.background = new THREE.Color( 0xbfe3dd );
     scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
-    camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 300 );
+    camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 300 );
     camera.position.set( 10, 20, 60);
 
     const controls = new OrbitControls( camera, renderer.domElement );
