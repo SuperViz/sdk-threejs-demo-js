@@ -45,7 +45,7 @@ function setMeetingUrl() {
   roomId = url.searchParams.get('roomId') ? url.searchParams.get('roomId') : generateUniqueId()
   
   if(roomIdInput) { 
-    roomIdInput.value = `${location.protocol + '//' + location.host}?roomId=${roomId}&user-type=guest`
+    roomIdInput.value = `${location.protocol + '//' + location.host}/guest.html?roomId=${roomId}&user-type=guest`
   }
 
   if(url.searchParams.get('roomId') && url.searchParams.get('user-type')) return;
