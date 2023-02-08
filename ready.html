@@ -36,14 +36,39 @@
 				<div class="text-side-ready">
 					<sv-demo-image id="sv-demo-image"
 						name="https://production.cdn.superviz.com/static/threejs-icon-set.png"></sv-demo-image>
-					<sv-demo-title-left id="sv-demo-title" name="Your meeting has been created. Click next to join.">
+					<sv-demo-title-left id="sv-demo-title" name="Your meeting has been created.">
 					</sv-demo-title-left>
+					<div id="loader-ms" class="loader-wrapper">
+						<div class="loader"></div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
 <style>
+	.loader-wrapper {
+		margin-top: 16px;
+	}
+	.loader {
+		border: 4px solid #6210CC;
+		border-top: 4px solid #C1FBDF;
+		border-radius: 50%;
+		width: 60px;
+		height: 60px;
+		animation: spin 1s linear infinite;
+	}
+
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
 	@media screen and (max-width: 935px) {
 		.wrapper {
 			display: none;
