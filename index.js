@@ -12,7 +12,8 @@ const addPlugin = () => {
             scale: 1
         },
         isAvatarsEnabled: true,
-        isPointersEnabled: true,
+        isLaserEnabled: true,
+        isMouseEnabled: true,
         isNameEnabled: true,
         renderLocalAvatar: false,
     });
