@@ -18,6 +18,6 @@ Clone the project repository:
 git@github.com:SuperViz/sdk-threejs-demo-js.git
 ```
 
-Fill the constant ```<SUPERVIZ_DEVELOPER_TOKEN>``` in ```modules/superviz/supervizSdk.js``` with your superviz developer token.
+Fill the constant ```<SUPERVIZ_DEVELOPER_KEY>``` in ```modules/superviz/supervizSdk.js``` with your superviz developer token.
 
 #### From the project root, run a local web server and access it using localhost.
