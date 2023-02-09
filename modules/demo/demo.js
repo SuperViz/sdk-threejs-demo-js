@@ -5,12 +5,19 @@ let roomId = url.searchParams.get('roomId')
 
 
 document.addEventListener('DOMContentLoaded', () => { 
-  setMeetingUrl();
+  validateMeetingUrl();
 })
 
 
 document.getElementById("next")?.addEventListener("click", (event) => { 
     userName = document.getElementById('username').value ?? undefined;
+
+    userType = url.searchParams.get('user-type') ? url.searchParams.get('user-type') : 'host';
+    roomId = url.searchParams.get('roomId') ? url.searchParams.get('roomId') : generateUniqueId()  
+
+    url.searchParams.set('roomId', roomId)
+    url.searchParams.set('user-type', userType)
+
     location.href = `${location.protocol + '//' + location.host}/invite.html?roomId=${roomId}&user-type=${userType}&user-name=${userName}`
 });
 
@@ -39,7 +46,7 @@ document.getElementById("invite-url-button")?.addEventListener("click", (event) 
     }, 3000);
 });
 
-function setMeetingUrl() { 
+function validateMeetingUrl() { 
   const roomIdInput = document.getElementById('room-id')
   const url = new URL(document.URL)
 
@@ -49,19 +56,11 @@ function setMeetingUrl() {
     location.href = `${location.protocol + '//' + location.host}/guest.html?roomId=${roomId}&user-type=${userType}`
   }
 
-  userType = url.searchParams.get('user-type') ? url.searchParams.get('user-type') : 'host';
-  roomId = url.searchParams.get('roomId') ? url.searchParams.get('roomId') : generateUniqueId()
-  
   if(roomIdInput) { 
     roomIdInput.value = `${location.protocol + '//' + location.host}/guest.html?roomId=${roomId}&user-type=guest`
   }
 
   if(url.searchParams.get('roomId') && url.searchParams.get('user-type')) return;
-
-  
-
-  url.searchParams.set('roomId', roomId)
-  url.searchParams.set('user-type', userType)
 }
 
 function generateUniqueId() {
