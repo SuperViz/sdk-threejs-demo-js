@@ -26,9 +26,17 @@ document.getElementById("invite-url-button")?.addEventListener("click", (event) 
     const roomIdInput = document.getElementById('room-id')
 
     if(!roomIdInput) return
-
-    
     navigator.clipboard.writeText(roomIdInput.value); 
+    const checkboxState = document.getElementById("check-copy").checked
+    if (checkboxState) {
+      document.getElementById("check-copy").checked = false;
+      return
+    }
+  
+    document.getElementById("check-copy").checked = true;
+    setTimeout(function () {
+      document.getElementById("check-copy").checked = false;
+    }, 3000);
 });
 
 function setMeetingUrl() { 
