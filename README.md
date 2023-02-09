@@ -7,7 +7,6 @@
 ## Description
 
 This is a simple demo showing how to integrate Superviz SDK to a threeJS scene.
-The demo is using the scene: https://threejs.org/examples/#webgl_animation_keyframes
 
 
 ## Quick start
