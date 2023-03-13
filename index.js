@@ -7,7 +7,6 @@ const iframeMeetingSettings = document.getElementById("sv-video-frame");
 // verify if meeting settings iframe is loaded
 iframeMeetingSettings.addEventListener("load", function () {
     document.getElementById("loader-ms").style.display = "none";
-    // document.getElementById("collapsedButtonInvite").style.display = "flex";
 });
 
 const addPlugin = () => {
