@@ -29,7 +29,8 @@ const addPlugin = () => {
 supervizSdk.subscribe(SuperVizSdk.MeetingEvent.MY_PARTICIPANT_JOINED, () => {
     startScene();
     addPlugin();
-    
+    document.getElementById("collapsedButtonInvite").style.display = "flex";
+
     amplitude.track("Enter example", {
       exampleName: "threejs-demo-js",
     });
